@@ -1,4 +1,4 @@
-# Azure Enterprise Lab
+device# Azure Enterprise Lab
 
 ## Project Overview
 
@@ -281,7 +281,7 @@ The purpose of this part is to show how cloud-based device management can suppor
 
 PowerShell will be used to automate common administrative tasks.
 
-Automation is important because it reduces manual work, improves consistency, and lowers the risk of human error. Humanity keeps inventing repetitive work, so naturally we must invent scripts to survive it.
+Automation is important because it reduces manual work, improves consistency, and lowers the risk of human error. PowerShell scripts can help administrators perform repetitive tasks more efficiently and reliably.
 
 Possible PowerShell tasks include:
 
@@ -508,7 +508,7 @@ Each major part of the project will include:
 * Problems and solutions
 * Security considerations
 
-This makes the project easier to understand and shows practical knowledge, not just button-clicking in the Azure portal like a lost acolyte pressing holy runes.
+This approach helps demonstrate practical knowledge and provides clear documentation of the implementation, testing, and configuration decisions made throughout the project.
 
 ---
 
