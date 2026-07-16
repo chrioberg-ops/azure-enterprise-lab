@@ -1,0 +1,56 @@
+[
+  {
+    "addressPrefixes": [
+      "10.0.0.0/24"
+    ],
+    "delegations": [],
+    "etag": "W/\"c35f2f69-15a8-490d-9886-352da1d750ef\"",
+    "id": "/subscriptions/556a20c8-be46-426e-b7ab-2bad03584e3a/resourceGroups/rg-nordicit-lab/providers/Microsoft.Network/virtualNetworks/vn-nordicit-lab/subnets/Server-Subnet",
+    "name": "Server-Subnet",
+    "networkSecurityGroup": {
+      "id": "/subscriptions/556a20c8-be46-426e-b7ab-2bad03584e3a/resourceGroups/rg-nordicit-lab/providers/Microsoft.Network/networkSecurityGroups/nsg-server-subnet",
+      "resourceGroup": "rg-nordicit-lab"
+    },
+    "privateEndpointNetworkPolicies": "Disabled",
+    "privateLinkServiceNetworkPolicies": "Enabled",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-nordicit-lab",
+    "type": "Microsoft.Network/virtualNetworks/subnets"
+  },
+  {
+    "addressPrefixes": [
+      "10.0.1.0/24"
+    ],
+    "delegations": [],
+    "etag": "W/\"c35f2f69-15a8-490d-9886-352da1d750ef\"",
+    "id": "/subscriptions/556a20c8-be46-426e-b7ab-2bad03584e3a/resourceGroups/rg-nordicit-lab/providers/Microsoft.Network/virtualNetworks/vn-nordicit-lab/subnets/Client-Subnet",
+    "name": "Client-Subnet",
+    "networkSecurityGroup": {
+      "id": "/subscriptions/556a20c8-be46-426e-b7ab-2bad03584e3a/resourceGroups/rg-nordicit-lab/providers/Microsoft.Network/networkSecurityGroups/nsg-client-subnet",
+      "resourceGroup": "rg-nordicit-lab"
+    },
+    "privateEndpointNetworkPolicies": "Disabled",
+    "privateLinkServiceNetworkPolicies": "Enabled",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-nordicit-lab",
+    "type": "Microsoft.Network/virtualNetworks/subnets"
+  },
+  {
+    "addressPrefixes": [
+      "10.0.2.0/24"
+    ],
+    "delegations": [],
+    "etag": "W/\"c35f2f69-15a8-490d-9886-352da1d750ef\"",
+    "id": "/subscriptions/556a20c8-be46-426e-b7ab-2bad03584e3a/resourceGroups/rg-nordicit-lab/providers/Microsoft.Network/virtualNetworks/vn-nordicit-lab/subnets/Management-Subnet",
+    "name": "Management-Subnet",
+    "networkSecurityGroup": {
+      "id": "/subscriptions/556a20c8-be46-426e-b7ab-2bad03584e3a/resourceGroups/rg-nordicit-lab/providers/Microsoft.Network/networkSecurityGroups/nsg-management-subnet",
+      "resourceGroup": "rg-nordicit-lab"
+    },
+    "privateEndpointNetworkPolicies": "Disabled",
+    "privateLinkServiceNetworkPolicies": "Enabled",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-nordicit-lab",
+    "type": "Microsoft.Network/virtualNetworks/subnets"
+  }
+]

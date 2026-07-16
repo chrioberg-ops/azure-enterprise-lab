@@ -1,0 +1,11 @@
+Validating subnet associations...
+PASS: Server-Subnet is associated with nsg-server-subnet
+PASS: Client-Subnet is associated with nsg-client-subnet
+PASS: Management-Subnet is associated with nsg-management-subnet
+
+Validating server NSG rules...
+PASS: Rule Allow-RDP-From-Management exists in nsg-server-subnet
+PASS: Rule Allow-DNS-From-Clients-UDP exists in nsg-server-subnet
+PASS: Rule Allow-DNS-From-Clients-TCP exists in nsg-server-subnet
+
+NETWORK VALIDATION RESULT: PASS
