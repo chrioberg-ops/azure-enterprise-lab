@@ -1,52 +1,7 @@
 {
-  "auxiliaryMode": "None",
-  "auxiliarySku": "None",
-  "disableTcpStateTracking": false,
-  "dnsSettings": {
-    "appliedDnsServers": [],
-    "dnsServers": [],
-    "internalDomainNameSuffix": "i5233wxbjveexjjnwqjwgyzmff.gvxx.internal.cloudapp.net"
-  },
-  "enableAcceleratedNetworking": false,
-  "enableIPForwarding": false,
-  "etag": "W/\"5aa318b2-0e66-40c9-9067-dc38e7126599\"",
-  "hostedWorkloads": [],
-  "id": "/subscriptions/556a20c8-be46-426e-b7ab-2bad03584e3a/resourceGroups/rg-nordicit-lab/providers/Microsoft.Network/networkInterfaces/nic-dc01",
-  "ipConfigurations": [
-    {
-      "etag": "W/\"5aa318b2-0e66-40c9-9067-dc38e7126599\"",
-      "id": "/subscriptions/556a20c8-be46-426e-b7ab-2bad03584e3a/resourceGroups/rg-nordicit-lab/providers/Microsoft.Network/networkInterfaces/nic-dc01/ipConfigurations/ipconfig1",
-      "name": "ipconfig1",
-      "primary": true,
-      "privateIPAddress": "10.0.0.4",
-      "privateIPAddressVersion": "IPv4",
-      "privateIPAllocationMethod": "Static",
-      "provisioningState": "Succeeded",
-      "publicIPAddress": {
-        "id": "/subscriptions/556a20c8-be46-426e-b7ab-2bad03584e3a/resourceGroups/rg-nordicit-lab/providers/Microsoft.Network/publicIPAddresses/pip-dc01",
-        "resourceGroup": "rg-nordicit-lab"
-      },
-      "resourceGroup": "rg-nordicit-lab",
-      "subnet": {
-        "id": "/subscriptions/556a20c8-be46-426e-b7ab-2bad03584e3a/resourceGroups/rg-nordicit-lab/providers/Microsoft.Network/virtualNetworks/vn-nordicit-lab/subnets/Server-Subnet",
-        "resourceGroup": "rg-nordicit-lab"
-      },
-      "type": "Microsoft.Network/networkInterfaces/ipConfigurations"
-    }
-  ],
-  "location": "swedencentral",
-  "macAddress": "7C-ED-8D-9D-9D-68",
-  "name": "nic-dc01",
-  "nicType": "Standard",
-  "primary": true,
-  "provisioningState": "Succeeded",
-  "resourceGroup": "rg-nordicit-lab",
-  "resourceGuid": "b4d51a73-bc3e-48e9-815b-c217bd12d51c",
-  "tapConfigurations": [],
-  "type": "Microsoft.Network/networkInterfaces",
-  "virtualMachine": {
-    "id": "/subscriptions/556a20c8-be46-426e-b7ab-2bad03584e3a/resourceGroups/rg-nordicit-lab/providers/Microsoft.Compute/virtualMachines/vm-dc01",
-    "resourceGroup": "rg-nordicit-lab"
-  },
-  "vnetEncryptionSupported": false
+  "Name": "nic-dc01",
+  "PrivateIPAddress": "10.0.0.4",
+  "PrivateIPAllocation": "Static",
+  "ProvisioningState": "Succeeded",
+  "Subnet": "Server-Subnet"
 }
