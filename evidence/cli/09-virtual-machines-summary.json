@@ -1,0 +1,18 @@
+[
+  {
+    "ComputerName": "CLIENT01",
+    "Name": "vm-client01",
+    "PowerState": "VM running",
+    "PrivateIP": "10.0.1.4",
+    "ProvisioningState": "Succeeded",
+    "Size": "Standard_D2s_v5"
+  },
+  {
+    "ComputerName": "DC01",
+    "Name": "vm-dc01",
+    "PowerState": "VM running",
+    "PrivateIP": "10.0.0.4",
+    "ProvisioningState": "Succeeded",
+    "Size": "Standard_D2s_v5"
+  }
+]

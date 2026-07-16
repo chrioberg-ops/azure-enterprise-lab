@@ -1,0 +1,76 @@
+{
+  "etag": "\"2\"",
+  "fqdns": "",
+  "hardwareProfile": {
+    "vmSize": "Standard_D2s_v5"
+  },
+  "id": "/subscriptions/556a20c8-be46-426e-b7ab-2bad03584e3a/resourceGroups/rg-nordicit-lab/providers/Microsoft.Compute/virtualMachines/vm-dc01",
+  "location": "swedencentral",
+  "macAddresses": "7C-ED-8D-9D-9D-68",
+  "name": "vm-dc01",
+  "networkProfile": {
+    "networkInterfaces": [
+      {
+        "id": "/subscriptions/556a20c8-be46-426e-b7ab-2bad03584e3a/resourceGroups/rg-nordicit-lab/providers/Microsoft.Network/networkInterfaces/nic-dc01",
+        "primary": true,
+        "resourceGroup": "rg-nordicit-lab"
+      }
+    ]
+  },
+  "osProfile": {
+    "adminUsername": "localadmin",
+    "allowExtensionOperations": true,
+    "computerName": "DC01",
+    "requireGuestProvisionSignal": true,
+    "secrets": [],
+    "windowsConfiguration": {
+      "enableAutomaticUpdates": true,
+      "enableVMAgentPlatformUpdates": true,
+      "patchSettings": {
+        "assessmentMode": "ImageDefault",
+        "patchMode": "AutomaticByOS"
+      },
+      "provisionVMAgent": true
+    }
+  },
+  "powerState": "VM running",
+  "privateIps": "10.0.0.4",
+  "provisioningState": "Succeeded",
+  "publicIps": "135.225.94.69",
+  "resourceGroup": "rg-nordicit-lab",
+  "securityProfile": {
+    "securityType": "TrustedLaunch",
+    "uefiSettings": {
+      "secureBootEnabled": true,
+      "vTpmEnabled": true
+    }
+  },
+  "storageProfile": {
+    "dataDisks": [],
+    "diskControllerType": "SCSI",
+    "imageReference": {
+      "exactVersion": "20348.5386.260711",
+      "offer": "WindowsServer",
+      "publisher": "MicrosoftWindowsServer",
+      "sku": "2022-datacenter-azure-edition-smalldisk",
+      "version": "20348.5386.260711"
+    },
+    "osDisk": {
+      "caching": "ReadWrite",
+      "createOption": "FromImage",
+      "deleteOption": "Detach",
+      "diskSizeGB": 30,
+      "managedDisk": {
+        "id": "/subscriptions/556a20c8-be46-426e-b7ab-2bad03584e3a/resourceGroups/rg-nordicit-lab/providers/Microsoft.Compute/disks/osdisk-dc01",
+        "resourceGroup": "rg-nordicit-lab",
+        "storageAccountType": "Standard_LRS"
+      },
+      "name": "osdisk-dc01",
+      "osType": "Windows"
+    }
+  },
+  "tags": {},
+  "timeCreated": "2026-07-16T07:48:39.6188561+00:00",
+  "type": "Microsoft.Compute/virtualMachines",
+  "vmId": "067eb468-5364-4c60-8313-ebfba6004cd1"
+}

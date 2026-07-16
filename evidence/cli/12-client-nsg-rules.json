@@ -1,0 +1,23 @@
+[
+  {
+    "access": "Allow",
+    "description": "Temporary RDP access from administrator public IP",
+    "destinationAddressPrefix": "10.0.1.4",
+    "destinationAddressPrefixes": [],
+    "destinationPortRange": "3389",
+    "destinationPortRanges": [],
+    "direction": "Inbound",
+    "etag": "W/\"7b5275a5-bd30-47a8-84e8-f9c45190d7e2\"",
+    "id": "/subscriptions/556a20c8-be46-426e-b7ab-2bad03584e3a/resourceGroups/rg-nordicit-lab/providers/Microsoft.Network/networkSecurityGroups/nsg-client-subnet/securityRules/Allow-Temporary-RDP-From-Home",
+    "name": "Allow-Temporary-RDP-From-Home",
+    "priority": 100,
+    "protocol": "Tcp",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-nordicit-lab",
+    "sourceAddressPrefix": "98.128.228.82/32",
+    "sourceAddressPrefixes": [],
+    "sourcePortRange": "*",
+    "sourcePortRanges": [],
+    "type": "Microsoft.Network/networkSecurityGroups/securityRules"
+  }
+]
