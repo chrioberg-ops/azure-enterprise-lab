@@ -1,0 +1,13 @@
+{
+  "id": "/subscriptions/556a20c8-be46-426e-b7ab-2bad03584e3a/resourceGroups/rg-nordicit-lab",
+  "location": "swedencentral",
+  "managedBy": null,
+  "name": "rg-nordicit-lab",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": {
+    "lab": ""
+  },
+  "type": "Microsoft.Resources/resourceGroups"
+}
