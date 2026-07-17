@@ -40,19 +40,6 @@
   },
   {
     "Access": "Allow",
-    "Description": "Temporary RDP access from administrator public IP",
-    "Destination": "10.0.0.4",
-    "DestinationPort": "3389",
-    "DestinationPorts": [],
-    "Direction": "Inbound",
-    "Name": "Allow-Temporary-RDP-From-Home",
-    "Priority": 130,
-    "Protocol": "Tcp",
-    "ProvisioningState": "Succeeded",
-    "Source": "REDACTED-PUBLIC-IP/32"
-  },
-  {
-    "Access": "Allow",
     "Description": "Allow Active Directory TCP traffic from client subnet to DC01",
     "Destination": "10.0.0.4",
     "DestinationPort": null,
@@ -96,5 +83,18 @@
     "Protocol": "Udp",
     "ProvisioningState": "Succeeded",
     "Source": "10.0.1.0/24"
+  },
+  {
+    "Access": "Allow",
+    "Description": "Allow administrative RDP from CLIENT01 to DC01",
+    "Destination": "10.0.0.4",
+    "DestinationPort": "3389",
+    "DestinationPorts": [],
+    "Direction": "Inbound",
+    "Name": "Allow-RDP-From-CLIENT01",
+    "Priority": 125,
+    "Protocol": "Tcp",
+    "ProvisioningState": "Succeeded",
+    "Source": "10.0.1.4/32"
   }
 ]
