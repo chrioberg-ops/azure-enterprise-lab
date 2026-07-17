@@ -235,7 +235,6 @@ if ($CreateTestUsers) {
 
         $UserIsMember = Get-ADGroupMember `
             -Identity $GroupName `
-            -Recursive `
             -ErrorAction SilentlyContinue |
             Where-Object SamAccountName -eq $User.SamAccountName
 
