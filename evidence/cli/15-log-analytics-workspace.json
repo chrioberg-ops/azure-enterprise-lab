@@ -1,0 +1,7 @@
+{
+  "Location": "swedencentral",
+  "Name": "law-nordicit-lab",
+  "ProvisioningState": "Succeeded",
+  "RetentionDays": 30,
+  "SKU": "PerGB2018"
+}

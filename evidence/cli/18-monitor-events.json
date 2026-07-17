@@ -1,0 +1,9 @@
+[
+  {
+    "Computer": "DC01.corp.nordicit.local",
+    "EventLevelName": "Warning",
+    "EventLog": "System",
+    "Events": "1",
+    "TableName": "PrimaryResult"
+  }
+]

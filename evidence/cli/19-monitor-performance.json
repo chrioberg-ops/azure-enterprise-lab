@@ -1,0 +1,26 @@
+[
+  {
+    "AverageValue": "5714.35",
+    "Computer": "DC01.corp.nordicit.local",
+    "CounterName": "Available MBytes",
+    "ObjectName": "Memory",
+    "Samples": "23",
+    "TableName": "PrimaryResult"
+  },
+  {
+    "AverageValue": "48.13",
+    "Computer": "DC01.corp.nordicit.local",
+    "CounterName": "% Free Space",
+    "ObjectName": "LogicalDisk",
+    "Samples": "23",
+    "TableName": "PrimaryResult"
+  },
+  {
+    "AverageValue": "8.04",
+    "Computer": "DC01.corp.nordicit.local",
+    "CounterName": "% Processor Time",
+    "ObjectName": "Processor",
+    "Samples": "21",
+    "TableName": "PrimaryResult"
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "location": "swedencentral",
+  "kind": "Windows",
+  "properties": {
+    "dataSources": {
+      "windowsEventLogs": [
+        {
+          "name": "windows-events",
+          "streams": [
+            "Microsoft-Event"
+          ],
+          "xPathQueries": [
+            "Application!*[System[(Level=1 or Level=2 or Level=3)]]",
+            "System!*[System[(Level=1 or Level=2 or Level=3)]]"
+          ]
+        }
+      ],
+      "performanceCounters": [
+        {
+          "name": "windows-performance",
+          "streams": [
+            "Microsoft-Perf"
+          ],
+          "samplingFrequencyInSeconds": 60,
+          "counterSpecifiers": [
+            "\\Processor(_Total)\\% Processor Time",
+            "\\Memory\\Available MBytes",
+            "\\LogicalDisk(_Total)\\% Free Space"
+          ]
+        }
+      ]
+    },
+    "destinations": {
+      "logAnalytics": [
+        {
+          "name": "lawDestination",
+          "workspaceResourceId": "/subscriptions/556a20c8-be46-426e-b7ab-2bad03584e3a/resourceGroups/rg-nordicit-lab/providers/Microsoft.OperationalInsights/workspaces/law-nordicit-lab"
+        }
+      ]
+    },
+    "dataFlows": [
+      {
+        "streams": [
+          "Microsoft-Event",
+          "Microsoft-Perf"
+        ],
+        "destinations": [
+          "lawDestination"
+        ]
+      }
+    ]
+  }
+}

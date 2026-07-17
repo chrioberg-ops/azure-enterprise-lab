@@ -1,0 +1,12 @@
+{
+  "EventStreams": [
+    "Microsoft-Event"
+  ],
+  "Kind": null,
+  "Location": "swedencentral",
+  "Name": "dcr-dc01-monitoring",
+  "PerformanceStreams": [
+    "Microsoft-Perf"
+  ],
+  "ProvisioningState": "Succeeded"
+}

@@ -176,3 +176,43 @@ The users were then verified as enabled and not locked out.
 The provider status was verified as `Registered`, after which the vault was created successfully.
 
 **Result:** RESOLVED
+
+---
+
+## TS-012 – Invalid Azure Monitor Event Stream
+
+**Problem:** Creation of the Data Collection Rule failed with `InvalidOutputTable`.
+
+**Cause:** The stream `Microsoft-WindowsEvent` attempted to send data to a table that was not available in the Log Analytics workspace.
+
+**Resolution:** The event stream was changed to:
+
+    Microsoft-Event
+
+This caused standard Windows events to be stored in the `Event` table.
+
+**Result:** RESOLVED
+
+---
+
+## TS-013 – Azure Monitor Data Initially Missing
+
+**Problem:** Heartbeat, Event and Perf queries initially returned no results.
+
+**Cause:** Azure Monitor Agent and the Data Collection Rule required additional time before configuration and data ingestion completed.
+
+**Investigation:**
+
+- Verified system-assigned managed identity.
+- Verified Azure Monitor Agent extension status.
+- Verified DCR creation and association.
+- Checked agent processes and local configuration.
+- Waited for Azure Monitor ingestion to complete.
+
+**Final result:**
+
+- Heartbeat records received.
+- Windows events received.
+- Performance counters received.
+
+**Result:** RESOLVED

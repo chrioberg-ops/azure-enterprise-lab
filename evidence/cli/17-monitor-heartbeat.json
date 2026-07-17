@@ -1,0 +1,10 @@
+[
+  {
+    "Category": "Azure Monitor Agent",
+    "Computer": "DC01.corp.nordicit.local",
+    "Heartbeats": "19",
+    "LatestHeartbeat": "2026-07-17T08:07:58.5177976Z",
+    "TableName": "PrimaryResult",
+    "Version": "1.44.0.0"
+  }
+]
