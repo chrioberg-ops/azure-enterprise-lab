@@ -124,3 +124,25 @@ Evidence:
 - Recovery point type: AppConsistent
 
 **Result:** PASS
+
+---
+
+## TC-PS-001 – Active Directory Automation Script
+
+**Purpose:** Verify that the Active Directory automation script can be run repeatedly without creating duplicate objects or changing an already correct environment.
+
+**Expected result:**
+
+- Existing OUs and groups are detected.
+- Existing AGDLP memberships are detected.
+- No duplicate objects are created.
+- `WhatIf` mode performs no changes.
+
+**Actual result:**
+
+- All OUs were reported as existing.
+- All global and domain-local groups were reported as existing.
+- All AGDLP memberships were reported as existing.
+- No creation or modification operations were attempted.
+
+**Result:** PASS
