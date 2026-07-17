@@ -126,7 +126,6 @@ foreach ($Department in $Departments) {
 
     $MembershipExists = Get-ADGroupMember `
         -Identity $DomainLocalGroup `
-        -Recursive `
         -ErrorAction SilentlyContinue |
         Where-Object SamAccountName -eq $GlobalGroup
 
