@@ -82,3 +82,19 @@ The following data was successfully received in the Perf table:
 **PASS**
 
 DC01 successfully sends heartbeat, Windows event and performance data to Azure Monitor.
+
+## Metric Alert
+
+A metric alert named `alert-dc01-high-cpu` was created for DC01.
+
+| Property | Value |
+|---|---|
+| Metric | Percentage CPU |
+| Aggregation | Average |
+| Threshold | Greater than 80 percent |
+| Evaluation frequency | 1 minute |
+| Evaluation window | 5 minutes |
+| Severity | 2 |
+| Enabled | Yes |
+
+The alert provides early warning if the domain controller experiences sustained high CPU usage.

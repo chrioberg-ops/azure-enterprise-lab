@@ -1,0 +1,9 @@
+{
+  "Description": "Alert when DC01 average CPU usage exceeds 80 percent for five minutes",
+  "Enabled": true,
+  "EvaluationFrequency": "PT1M",
+  "Name": "alert-dc01-high-cpu",
+  "ProvisioningState": null,
+  "Severity": 2,
+  "WindowSize": "PT5M"
+}
