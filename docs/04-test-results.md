@@ -146,3 +146,31 @@ Evidence:
 - No creation or modification operations were attempted.
 
 **Result:** PASS
+
+---
+
+## TC-PS-002 – Department File Share Automation
+
+**Purpose:** Verify that the file share automation script can validate and maintain the department folders, SMB shares and permissions without creating duplicate configurations.
+
+**Expected result:**
+
+- All department folders are detected.
+- `SYSTEM` and `BUILTIN\Administrators` have Full Control.
+- Each `DL-<Department>-Modify` group has NTFS Modify permission.
+- Each department group has SMB Change permission.
+- All shares use access-based enumeration.
+- SMB caching is disabled.
+- A repeated run does not attempt unnecessary changes.
+
+**Actual result:**
+
+- All six department folders were detected.
+- Full Control permissions were verified for `SYSTEM` and `BUILTIN\Administrators`.
+- NTFS Modify permissions were verified for all department permission groups.
+- SMB Change permissions were verified for all department shares.
+- All shares reported `FolderEnumerationMode` as `AccessBased`.
+- All shares reported `CachingMode` as `None`.
+- The final `WhatIf` run did not report any required changes.
+
+**Result:** PASS
