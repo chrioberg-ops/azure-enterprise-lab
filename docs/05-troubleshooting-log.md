@@ -160,3 +160,19 @@ The users were then verified as enabled and not locked out.
 **Resolution:** Future VM-size checks were changed to use `az vm list-skus`.
 
 **Result:** RESOLVED
+
+---
+
+## TS-011 – Recovery Services Provider Not Registered
+
+**Problem:** Creation of the Recovery Services vault failed with `MissingSubscriptionRegistration`.
+
+**Cause:** The `Microsoft.RecoveryServices` resource provider was not registered for the subscription.
+
+**Resolution:**
+
+    az provider register --namespace Microsoft.RecoveryServices --wait
+
+The provider status was verified as `Registered`, after which the vault was created successfully.
+
+**Result:** RESOLVED
