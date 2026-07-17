@@ -102,3 +102,25 @@ Evidence:
 - Domain firewall: Enabled
 
 **Result:** PASS
+
+---
+
+## TC-BACKUP-001 – DC01 Recovery Point Validation
+
+**Purpose:** Verify that Azure Backup created a usable recovery point for DC01.
+
+**Expected result:**
+
+- DC01 is protected
+- The latest backup completed successfully
+- At least one recovery point exists
+
+**Actual result:**
+
+- Protection state: Protected
+- Health status: Passed
+- Last backup status: Completed
+- Recovery point found: Yes
+- Recovery point type: AppConsistent
+
+**Result:** PASS
