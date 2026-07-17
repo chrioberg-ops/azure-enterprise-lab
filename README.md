@@ -446,19 +446,44 @@ The project will show how basic security controls can be applied in an enterpris
 
 ## Current Progress
 
-* [x] Project Planning
-* [ ] Azure Infrastructure
-* [ ] Network Design
-* [ ] Windows Server Deployment
-* [ ] Active Directory
-* [ ] Active Directory Security
-* [ ] Group Policy
-* [ ] Microsoft Entra ID
-* [ ] Microsoft Intune
-* [ ] PowerShell Automation
-* [ ] Monitoring
-* [ ] Backup and Recovery
-* [ ] Final Documentation
+### Completed
+
+- [x] Project planning and business scenario
+- [x] Azure Resource Group
+- [x] Virtual Network and subnet segmentation
+- [x] Network Security Groups
+- [x] Windows Server deployment
+- [x] Active Directory Domain Services
+- [x] DNS configuration
+- [x] Organizational Unit structure
+- [x] Department security groups
+- [x] Test user accounts
+- [x] Windows 11 client deployment
+- [x] Domain join
+- [x] Department file shares
+- [x] AGDLP permission model
+- [x] File access validation
+- [x] Group Policy configuration
+- [x] Azure Backup
+- [x] Recovery point validation
+- [x] Azure Monitor and Log Analytics
+- [x] Windows event and performance collection
+- [x] High CPU alert
+- [x] Removal of public RDP access from DC01
+- [x] Troubleshooting and technical evidence
+
+### In Progress
+
+- [ ] PowerShell automation scripts
+- [ ] Final screenshots and evidence review
+- [ ] Architecture and network diagrams
+- [ ] Final school report
+- [ ] Presentation material
+
+### Optional or License-Dependent
+
+- [ ] Microsoft Entra ID integration
+- [ ] Microsoft Intune enrollment and policies
 
 ---
 
