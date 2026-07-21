@@ -438,3 +438,4 @@ github_chrioberg
 github_chrioberg.pub
 *.pem
 *.key
+*:Zone.Identifier
