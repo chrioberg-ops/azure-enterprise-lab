@@ -200,7 +200,20 @@ The screenshot below shows the HR user and HR group.
 
 ### Domain-Joined Client
 
-CLIENT01 is joined to the domain:
+CLIENT01 is joined to the domain `corp.nordicit.local`.
 
-```text
-corp.nordicit.local
+Its fully qualified computer name is:
+
+`CLIENT01.corp.nordicit.local`
+
+![Domain-Joined Client](../evidence/03-active-directory/08-domain-joined-client.png)
+
+### DNS Zone
+
+DC01 hosts the Active Directory-integrated DNS zone:
+
+`corp.nordicit.local`
+
+The zone contains DNS records for both DC01 and CLIENT01.
+
+![DNS Zone](../evidence/03-active-directory/09-dns-zone.png)

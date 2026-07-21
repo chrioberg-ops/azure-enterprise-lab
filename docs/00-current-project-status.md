@@ -2,9 +2,11 @@
 
 ## Overall Status
 
-The technical implementation of the Azure Enterprise Lab is largely complete.
+The technical implementation of the Azure Enterprise Lab is complete for the available Azure subscription and tenant access.
 
-The environment currently includes a functioning Azure network, Windows domain, domain-joined client, department file services, Group Policy, monitoring, backup and security hardening.
+The environment includes a functioning Azure network, Windows domain, domain-joined client, department file services, Group Policy, Azure Backup, Azure Monitor, security hardening and PowerShell automation.
+
+Microsoft Entra ID and Microsoft Intune were investigated but could not be implemented because the available account is an external B2B user without the required tenant roles or licenses.
 
 ## Implemented Environment
 
@@ -30,6 +32,11 @@ The environment currently includes a functioning Azure network, Windows domain, 
 | Log Analytics | Complete |
 | CPU metric alert | Complete |
 | DC01 network hardening | Complete |
+| PowerShell automation | Complete |
+| Network diagram | Complete |
+| System architecture diagram | Complete |
+| UML sequence diagram | Complete |
+| Microsoft Entra ID and Intune | Not implemented – documented limitation |
 
 ## Verified Tests
 
@@ -37,28 +44,30 @@ The environment currently includes a functioning Azure network, Windows domain, 
 - LDAP and SMB connectivity work between the client and server subnets.
 - A department user can access the correct file share.
 - The same user is denied access to another department's share.
-- The client receives the Client Security Baseline GPO.
+- CLIENT01 receives the Client Security Baseline GPO.
 - Azure Backup completed successfully.
 - An application-consistent recovery point exists.
 - Azure Monitor receives heartbeat, event and performance data.
 - DC01 can be administered privately from CLIENT01.
 - DC01 no longer has a public IP address.
+- PowerShell scripts can be run repeatedly without creating duplicate objects.
 
 ## Remaining Work
 
-The main remaining work is documentation rather than core infrastructure:
+The remaining work is focused on final documentation and submission:
 
-- Create reusable PowerShell scripts.
-- Produce final network and architecture diagrams.
-- Capture clean screenshots.
-- Review all evidence files.
-- Complete the school report.
+- Capture the remaining Azure Backup evidence screenshots.
+- Capture the remaining Azure Monitor evidence screenshots.
+- Capture PowerShell automation evidence screenshots.
+- Capture Intune and licensing-limitation evidence screenshots.
+- Review all evidence links and filenames.
+- Complete the final school report.
 - Prepare the presentation.
-- Decide whether Entra ID and Intune can be demonstrated with the available licensing.
 
 ## Estimated Completion
 
-- Technical implementation: approximately 90 percent
-- Technical documentation: approximately 70 percent
-- Diagrams and screenshots: approximately 25 percent
-- Final school submission: approximately 35 percent
+- Technical implementation: 100 percent for the available environment
+- Technical documentation: approximately 85 percent
+- Diagrams: 100 percent
+- Screenshots and evidence: approximately 65 percent
+- Final school submission: approximately 70 percent

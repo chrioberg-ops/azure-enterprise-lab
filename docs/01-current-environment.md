@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document describes the Azure resources that existed at the beginning of the Nordic IT Solutions enterprise lab.
+This document describes the final implemented Azure infrastructure for the Nordic IT Solutions enterprise lab.
 
 ## Subscription
 
@@ -34,7 +34,9 @@ The project uses an active Azure subscription managed through Azure CLI from WSL
 
 ## Current Security State
 
-No Network Security Groups were associated with the subnets during the initial inventory.
+Each subnet is associated with a dedicated Network Security Group.
+
+DC01 has no public IP address. Administrative access to DC01 is performed through CLIENT01 over the private Azure network.
 
 ---
 

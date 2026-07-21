@@ -60,7 +60,7 @@ Custom rules are evaluated before the default rules because they use lower prior
 
 The current configuration follows the principle of least privilege by only allowing traffic that is currently required.
 
-Additional Active Directory ports will be added when the domain controller and Windows client are deployed.
+Required Active Directory communication is supported between CLIENT01 and DC01 through the Azure virtual network.
 
 ## Validation
 
@@ -68,7 +68,7 @@ The following checks were performed:
 
 - All three Network Security Groups were created successfully.
 - Each NSG was associated with the correct subnet.
-- RDP access was limited to the management subnet.
+- Internal RDP access to DC01 was limited to CLIENT01 and the management subnet.
 - DNS access was allowed from the client subnet.
 - No general inbound RDP rule from the internet was created.
 
