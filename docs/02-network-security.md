@@ -74,12 +74,47 @@ The following checks were performed:
 
 ## Evidence
 
-- `evidence/cli/04-network-security-groups.json`
-- `evidence/cli/05-server-nsg-rules.json`
-- `evidence/cli/06-subnet-nsg-associations.json`
+### Server NSG Rules
+
+The server subnet is protected by `nsg-server-subnet`.
+
+The inbound rules allow only the traffic required for administration, DNS, Active Directory and client communication.
+
+![Server NSG Rules](../evidence/02-network-security/01-server-nsg-rules.png)
+
+### Client NSG Rules
+
+The client subnet is protected by `nsg-client-subnet`.
+
+Remote Desktop access to CLIENT01 is limited to specific public source IP addresses using `/32` restrictions.
+
+![Client NSG Rules](../evidence/02-network-security/02-client-nsg-rules.png)
+
+### Internal RDP to DC01
+
+The rule `Allow-RDP-From-CLIENT01` allows internal Remote Desktop traffic from CLIENT01 at `10.0.1.4/32` to DC01 at `10.0.0.4` on TCP port `3389`.
+
+![Internal RDP Rule](../evidence/02-network-security/03-internal-rdp-rule.png)
+
+### Restricted Public RDP to CLIENT01
+
+Public Remote Desktop access to CLIENT01 is restricted to a specific public source IP address with a `/32` prefix.
+
+This is more secure than allowing RDP from any internet address.
+
+![CLIENT01 RDP Source Restriction](../evidence/02-network-security/04-client-rdp-source-restriction.png)
+
+### DC01 Has No Public IP
+
+DC01 only uses the private IP address `10.0.0.4`.
+
+The virtual machine has no public IP address and cannot be reached directly from the internet.
+
+![DC01 No Public IP](../evidence/02-network-security/05-dc01-no-public-ip.png)
 
 ## Result
 
 **PASS**
 
 The subnet-level Network Security Groups were created and associated successfully.
+

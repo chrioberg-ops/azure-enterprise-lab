@@ -36,18 +36,49 @@ The project uses an active Azure subscription managed through Azure CLI from WSL
 
 No Network Security Groups were associated with the subnets during the initial inventory.
 
+---
+
 ## Evidence
 
-The exported Azure CLI configuration is stored in:
+### Resource Group
 
-- `evidence/cli/01-resource-group.json`
-- `evidence/cli/02-virtual-network.json`
-- `evidence/cli/03-subnets.json`
+The following screenshot shows the Azure resource group used for the project and the main Azure resources deployed inside it.
 
-An exported ARM template is stored in:
+![Resource Group Overview](../evidence/01-azure-infrastructure/01-resource-group-overview.png)
 
-- `infra/exported/current-state-arm.json`
+### Virtual Network
 
-## Next Step
+The virtual network uses the address space `10.0.0.0/16` and is connected to the domain controller DNS server at `10.0.0.4`.
 
-Create and associate Network Security Groups for the server, client and management subnets.
+![Virtual Network Overview](../evidence/01-azure-infrastructure/02-vnet-overview.png)
+
+### Subnets
+
+The environment is divided into three subnets:
+
+- Server-Subnet: `10.0.0.0/24`
+- Client-Subnet: `10.0.1.0/24`
+- Management-Subnet: `10.0.2.0/24`
+
+![Virtual Network Subnets](../evidence/01-azure-infrastructure/03-vnet-subnets.png)
+
+### Virtual Machines
+
+The environment contains two Windows virtual machines:
+
+- `vm-dc01`
+- `vm-client01`
+
+![Virtual Machines](../evidence/01-azure-infrastructure/04-virtual-machines.png)
+
+### DC01 Network Configuration
+
+DC01 uses the private IP address `10.0.0.4` in the Server-Subnet and does not have a public IP address.
+
+![DC01 Network Overview](../evidence/01-azure-infrastructure/05-dc01-network-overview.png)
+
+### CLIENT01 Network Configuration
+
+CLIENT01 uses the private IP address `10.0.1.4` in the Client-Subnet and is used as the temporary administrative jump host.
+
+![CLIENT01 Network Overview](../evidence/01-azure-infrastructure/06-client01-network-overview.png)

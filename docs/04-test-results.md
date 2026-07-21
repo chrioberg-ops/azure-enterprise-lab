@@ -201,3 +201,65 @@ Evidence:
 - No unnecessary creation or modification operations were attempted.
 
 **Result:** PASS
+
+---
+
+## Evidence
+
+### Group Policy Validation
+
+The `Client Security Baseline` GPO was applied successfully to CLIENT01.
+
+The policy includes:
+
+- Machine inactivity timeout
+- Windows Defender Firewall configuration
+- Centralized computer security settings
+
+![Client Security Baseline](../evidence/04-group-policy/01-client-security-baseline.png)
+
+![GPO Link](../evidence/04-group-policy/02-gpo-link.png)
+
+![Inactivity Timeout Policy](../evidence/04-group-policy/03-inactivity-timeout-policy.png)
+
+![Firewall Policy](../evidence/04-group-policy/04-firewall-policy.png)
+
+![Applied Group Policy Result](../evidence/04-group-policy/05-gpo-application-result.png)
+
+### File Share Validation
+
+The department file-share configuration was tested using both authorized and unauthorized access attempts.
+
+The HR user could access the HR share and create a test file.
+
+![HR Access Granted](../evidence/05-file-services/06-hr-access-granted.png)
+
+A user from another department was denied access to the HR share.
+
+![Cross-Department Access Denied](../evidence/05-file-services/07-cross-department-access-denied.png)
+
+### File Service Configuration
+
+The department folders, SMB shares and permissions were validated.
+
+![Department Folders](../evidence/05-file-services/01-department-folders.png)
+
+![SMB Shares](../evidence/05-file-services/02-smb-shares.png)
+
+![HR NTFS Permissions](../evidence/05-file-services/03-hr-ntfs-permissions.png)
+
+![HR SMB Permissions](../evidence/05-file-services/04-hr-smb-permissions.png)
+
+![Share Security Settings](../evidence/05-file-services/05-share-security-settings.png)
+
+### PowerShell Validation
+
+The PowerShell automation scripts were tested with repeated validation runs.
+
+The tests confirmed that the scripts were idempotent and did not attempt unnecessary changes.
+
+The following PowerShell test cases passed:
+
+- `TC-PS-001` – Active Directory structure automation
+- `TC-PS-002` – Department file-share automation
+- `TC-PS-003` – Active Directory user automation
