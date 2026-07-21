@@ -1,595 +1,1145 @@
-device# Azure Enterprise Lab
+# Azure Enterprise Lab
 
 ## Project Overview
 
-Azure Enterprise Lab is a vocational graduation project focused on designing, implementing, securing, and documenting a modern enterprise IT environment using Microsoft Azure and Microsoft server technologies.
+Azure Enterprise Lab is a vocational graduation project focused on designing, implementing, securing, testing, automating, monitoring and documenting a realistic enterprise IT environment in Microsoft Azure.
 
-The project is based on a fictional company called **Nordic IT Solutions AB**, a growing IT consulting company with approximately 50 employees working both on-site and remotely.
+The project is based on a fictional company named **Nordic IT Solutions AB**, a Stockholm-based IT consulting company with approximately 50 employees working both on-site and remotely.
 
-The purpose of the project is to demonstrate practical knowledge in cloud infrastructure, identity management, server administration, device management, security, automation, monitoring, backup, and technical documentation.
-
-The project will simulate how a system administrator can build and manage a secure enterprise environment that supports both office-based users and remote employees.
+The purpose of the project is to demonstrate practical skills relevant to a junior system administrator or network technician role. The environment is designed as a realistic small-business lab rather than a certification exercise or a Microsoft Learn walkthrough.
 
 ---
 
 ## Business Scenario
 
-Nordic IT Solutions AB is expanding and needs a modern IT environment that can support centralized administration, secure user access, device management, monitoring, backup, and remote work.
+Nordic IT Solutions AB is expanding and requires a centrally managed IT environment that can support:
 
-The company currently needs a scalable infrastructure where users, computers, servers, security policies, and administrative tasks can be managed in a structured way.
+- Centralized user and computer administration
+- Secure authentication and access control
+- Windows Server administration
+- Network segmentation
+- Department-based file access
+- Remote administration
+- Group Policy
+- Monitoring and alerting
+- Backup and recovery
+- PowerShell automation
+- Future Microsoft Entra ID and Intune integration
 
-As the System Administrator, the task is to design and implement a secure Azure-based enterprise lab environment that reflects how a small or medium-sized company could manage its IT infrastructure.
+The company has approximately 50 employees divided into the following departments:
 
-The environment must support:
+- IT
+- HR
+- Finance
+- Sales
+- Management
+- Consultants
 
-* Centralized user and computer management
-* Secure authentication and access control
-* Remote work capabilities
-* Windows Server administration
-* Active Directory management
-* Microsoft Entra ID integration
-* Device management with Microsoft Intune
-* Network segmentation and security rules
-* Monitoring and logging
-* Backup and recovery procedures
-* Automation of common administrative tasks
+The company uses a hybrid working model. Employees work both from the Stockholm office and remotely.
 
 ---
 
 ## Project Goal
 
-The goal of this project is to investigate how Microsoft Azure and Microsoft enterprise technologies can be used to build, secure, automate, and administer a modern IT environment.
+The goal of this project is to investigate how Microsoft Azure and Microsoft enterprise technologies can be used to build, secure, automate and administer a modern IT environment.
 
-The project will show how cloud infrastructure, identity management, device management, security policies, monitoring, and backup can work together in a realistic business scenario.
+The final environment should demonstrate:
 
-The final result should be a documented enterprise lab environment that demonstrates practical skills relevant to a network technician or junior system administrator role.
+- Secure Azure infrastructure
+- Centralized identity management
+- Structured network design
+- Department-based access control
+- Domain-joined Windows clients
+- Group Policy management
+- File services
+- Monitoring and alerting
+- Backup and recovery
+- PowerShell automation
+- Technical testing and documentation
 
 ---
 
 ## Learning Objectives
 
-The project aims to demonstrate knowledge and practical skills in the following areas:
+The project demonstrates practical knowledge in:
 
-* Microsoft Azure administration
-* Windows Server administration
-* Active Directory Domain Services
-* Microsoft Entra ID
-* Microsoft Intune
-* Group Policy management
-* Network design and segmentation
-* Identity and access management
-* Security hardening
-* PowerShell automation
-* Azure monitoring and logging
-* Backup and recovery
-* Technical documentation
-* Troubleshooting and evaluation
-
----
-
-## Project Scope
-
-The project will include the design, implementation, configuration, testing, and documentation of an enterprise IT environment.
-
-The implementation will include:
-
-* Azure Resource Groups
-* Azure Virtual Networks
-* Subnets
-* Network Security Groups
-* Windows Server virtual machines
-* Active Directory Domain Services
-* Organizational Units
-* Users and groups
-* Group Policy Objects
-* Active Directory security hardening
-* Password and account lockout policies
-* Role-based access control
-* Microsoft Entra ID
-* Microsoft Intune
-* Windows device management
-* Compliance policies
-* PowerShell automation
-* Azure Monitor
-* Log collection
-* Azure Backup
-* Recovery testing
-* Final technical documentation
-
-The project will focus on practical implementation and documentation rather than production-scale deployment.
+- Microsoft Azure administration
+- Azure networking
+- Windows Server administration
+- Active Directory Domain Services
+- DNS
+- Organizational Units
+- User and group administration
+- AGDLP access control
+- Group Policy
+- File server administration
+- NTFS and SMB permissions
+- Security hardening
+- Azure Backup
+- Azure Monitor
+- Log Analytics
+- PowerShell automation
+- Troubleshooting
+- Git and GitHub
+- Technical documentation
 
 ---
 
-## Technologies Used
+## Current Project Status
 
-The following technologies and tools will be used in the project:
+The core Azure and Windows Server environment has been implemented and tested.
 
-* Microsoft Azure
-* Azure Resource Groups
-* Azure Virtual Networks
-* Network Security Groups
-* Windows Server
-* Active Directory Domain Services
-* Microsoft Entra ID
-* Microsoft Intune
-* Group Policy Management
-* PowerShell
-* Azure Monitor
-* Azure Backup
-* GitHub
-* Draw.io or similar diagram tool
-* Markdown documentation
-
----
-
-## Environment Design
-
-The lab environment will be built in Microsoft Azure and designed to represent a small enterprise network.
-
-The environment will include:
-
-* One Azure Resource Group for organizing project resources
-* One Virtual Network for the lab environment
-* Separate subnets for servers and clients
-* Network Security Groups to control inbound and outbound traffic
-* A Windows Server virtual machine used as a domain controller
-* Active Directory Domain Services for centralized identity management
-* Test users, groups, and computers
-* Group Policies for security and configuration
-* Microsoft Intune for endpoint and compliance management
-* Azure Monitor for monitoring and logs
-* Azure Backup for backup and recovery testing
-
----
-
-## Network Design
-
-The network will be designed to separate different parts of the environment and improve security.
-
-The network design will include:
-
-* A Virtual Network in Azure
-* A server subnet for domain controllers and server resources
-* A client subnet for test clients
-* Network Security Groups for traffic control
-* Restricted Remote Desktop access
-* Clear IP address planning
-* Documentation of network layout and security rules
-
-The purpose of the network design is to show how Azure networking can be used to create a structured and secure enterprise environment.
-
----
-
-## Active Directory Design
-
-Active Directory Domain Services will be used to centrally manage users, computers, groups, and policies.
-
-The Active Directory structure will include Organizational Units for different types of objects. This makes the environment easier to manage and allows Group Policies to be applied in a controlled way.
-
-Example Organizational Units:
-
-* Users
-* Computers
-* Servers
-* Administrators
-* Service Accounts
-* Groups
-
-Users and groups will be created based on the fictional company structure of Nordic IT Solutions AB.
-
-Example departments:
-
-* IT
-* Management
-* Finance
-* Sales
-* Support
-* Consultants
-
-Security groups will be used to control access based on roles and responsibilities.
-
----
-
-## Active Directory Security
-
-Security will be an important part of the Active Directory configuration.
-
-The Active Directory environment will be configured using basic security principles that are common in real enterprise environments.
-
-The security configuration will include:
-
-* Separate standard user accounts and administrator accounts
-* Least privilege access for users and administrators
-* Role-based security groups
-* Strong password policy
-* Account lockout policy
-* Restricted Remote Desktop access
-* Limited local administrator permissions
-* Group Policy security settings
-* Disabled guest accounts
-* Documentation of privileged accounts
-* Review of group memberships
-* Separation between normal users and administrative users
-* Clear naming standards for users, groups, and computers
-
-The purpose of these settings is to reduce unnecessary access, improve account security, and make the environment easier to manage and audit.
-
----
-
-## Group Policy
-
-Group Policy will be used to manage security and configuration settings for users and computers in the Active Directory domain.
-
-Group Policies may include:
-
-* Password policy
-* Account lockout policy
-* Windows Firewall settings
-* Desktop and user restrictions
-* Drive mapping
-* Security settings for Windows clients
-* Remote Desktop restrictions
-* Local administrator restrictions
-* Automatic screen lock
-* Basic hardening of Windows settings
-
-The Group Policy configuration will be documented and tested to confirm that the correct settings are applied to the correct users and computers.
-
----
-
-## Microsoft Entra ID
-
-Microsoft Entra ID will be included to demonstrate cloud-based identity management.
-
-The project will describe how Entra ID can be used together with Microsoft cloud services to manage users, authentication, and access.
-
-The Entra ID section will include:
-
-* Overview of Entra ID
-* User and group management
-* Identity security concepts
-* Multi-factor authentication concept
-* Relationship between Active Directory and Entra ID
-* Cloud identity management documentation
-
-If possible within the lab environment, selected identity features will be tested and documented.
-
----
-
-## Microsoft Intune
-
-Microsoft Intune will be used to demonstrate modern device management.
-
-The Intune section will focus on how organizations can manage Windows devices, apply compliance settings, and improve endpoint security.
-
-The Intune configuration may include:
-
-* Device enrollment
-* Compliance policies
-* Configuration profiles
-* Security baselines
-* Windows update settings
-* Endpoint protection settings
-* Device inventory
-* Documentation of managed devices
-
-The purpose of this part is to show how cloud-based device management can support both office-based and remote users.
-
----
-
-## PowerShell Automation
-
-PowerShell will be used to automate common administrative tasks.
-
-Automation is important because it reduces manual work, improves consistency, and lowers the risk of human error. PowerShell scripts can help administrators perform repetitive tasks more efficiently and reliably.
-
-Possible PowerShell tasks include:
-
-* Creating users
-* Creating groups
-* Creating Organizational Units
-* Adding users to groups
-* Exporting user or group information
-* Checking system information
-* Basic server administration tasks
-* Documentation support
-
-Scripts will be stored in the `scripts/` folder and documented so that their purpose and usage are clear.
-
----
-
-## Monitoring and Logging
-
-Azure Monitor will be used to demonstrate monitoring and logging in the Azure environment.
-
-Monitoring is important because administrators need visibility into system health, performance, and possible problems.
-
-The monitoring section may include:
-
-* Azure Monitor overview
-* Monitoring virtual machines
-* Reviewing activity logs
-* Checking performance metrics
-* Basic alerting concepts
-* Log collection
-* Documentation of monitoring results
-
-The goal is to show how monitoring can help detect issues and support troubleshooting.
-
----
-
-## Backup and Recovery
-
-Azure Backup will be used to demonstrate backup and recovery procedures.
-
-Backup is important because systems can fail, data can be deleted, and users can somehow break things that should not be breakable. Such is the eternal curse of IT.
-
-The backup section will include:
-
-* Azure Backup configuration
-* Backup policy documentation
-* Backup of selected virtual machines
-* Recovery Services Vault
-* Test restore procedure
-* Documentation of recovery results
-
-The purpose is to show that backup is not complete until recovery has been tested.
-
----
-
-## Security Focus
-
-Security will be included throughout the project, not treated as a separate afterthought.
-
-Security areas in the project include:
-
-* Network Security Groups
-* Restricted management access
-* Active Directory hardening
-* Least privilege access
-* Password and account lockout policies
-* Role-based access control
-* Group Policy security settings
-* Device compliance policies
-* Monitoring and logging
-* Backup and recovery
-* Documentation of security decisions
-
-The project will show how basic security controls can be applied in an enterprise-style Azure environment.
-
----
-
-## Project Roadmap
-
-### Phase 1 – Planning
-
-* Define business requirements
-* Define project goals
-* Create company scenario
-* Design initial network architecture
-* Plan documentation structure
-* Create GitHub repository
-
-### Phase 2 – Azure Infrastructure
-
-* Create Azure Resource Group
-* Create Virtual Network
-* Create subnets
-* Configure Network Security Groups
-* Deploy Windows Server virtual machine
-* Document Azure resources
-* Take screenshots of important configuration steps
-
-### Phase 3 – Identity Management
-
-* Deploy Active Directory Domain Services
-* Configure the domain controller
-* Create the Active Directory domain
-* Create Organizational Units
-* Create users and groups
-* Create administrator accounts
-* Configure role-based access
-* Apply least privilege principles
-* Document the Active Directory structure
-
-### Phase 4 – Group Policy and AD Security
-
-* Configure password policy
-* Configure account lockout policy
-* Configure Windows Firewall settings
-* Restrict Remote Desktop access
-* Apply user and computer policies
-* Test Group Policy application
-* Document all Group Policy settings
-* Review basic Active Directory security settings
-
-### Phase 5 – Microsoft Entra ID and Intune
-
-* Configure Microsoft Entra ID basics
-* Create or review cloud users and groups
-* Configure Intune basics
-* Enroll Windows device if possible
-* Create compliance policies
-* Create configuration profiles
-* Document device management settings
-
-### Phase 6 – PowerShell Automation
-
-* Create PowerShell scripts for administration
-* Automate user or group creation
-* Automate reporting tasks
-* Test scripts in the lab environment
-* Document script purpose and usage
-
-### Phase 7 – Monitoring and Backup
-
-* Configure Azure Monitor
-* Review activity logs and metrics
-* Configure Azure Backup
-* Create backup policy
-* Run backup test
-* Test recovery procedure
-* Document monitoring and recovery results
-
-### Phase 8 – Final Documentation and Evaluation
-
-* Complete all documentation
-* Add screenshots
-* Review project goals
-* Write lessons learned
-* Evaluate what worked well
-* Describe problems and solutions
-* Suggest future improvements
-* Prepare final submission
-
----
-
-## Current Progress
-
-### Completed
-
-- [x] Project planning and business scenario
-- [x] Azure Resource Group
-- [x] Virtual Network and subnet segmentation
-- [x] Network Security Groups
-- [x] Windows Server deployment
-- [x] Active Directory Domain Services
-- [x] DNS configuration
-- [x] Organizational Unit structure
-- [x] Department security groups
-- [x] Test user accounts
-- [x] Windows 11 client deployment
-- [x] Domain join
-- [x] Department file shares
-- [x] AGDLP permission model
-- [x] File access validation
-- [x] Group Policy configuration
-- [x] Azure Backup
-- [x] Recovery point validation
-- [x] Azure Monitor and Log Analytics
-- [x] Windows event and performance collection
-- [x] High CPU alert
-- [x] Removal of public RDP access from DC01
-- [x] Troubleshooting and technical evidence
-
-### In Progress
-
-- [ ] PowerShell automation scripts
-- [ ] Final screenshots and evidence review
-- [ ] Architecture and network diagrams
-- [ ] Final school report
-- [ ] Presentation material
-
-### Optional or License-Dependent
-
-- [ ] Microsoft Entra ID integration
-- [ ] Microsoft Intune enrollment and policies
-
----
-
-## Repository Structure
+Estimated overall completion:
 
 ```text
-azure-enterprise-lab/
+Approximately 70–75%
+```
 
-├── README.md
-├── docs/
-│   ├── 01-project-plan.md
-│   ├── 02-company-scenario.md
-│   ├── 03-network-design.md
-│   ├── 04-active-directory.md
-│   ├── 05-active-directory-security.md
-│   ├── 06-group-policy.md
-│   ├── 07-entra-id.md
-│   ├── 08-intune.md
-│   ├── 09-automation.md
-│   ├── 10-monitoring.md
-│   ├── 11-backup.md
-│   ├── 12-security-hardening.md
-│   └── 13-lessons-learned.md
-│
-├── diagrams/
-│   └── network-diagram.drawio
-│
-├── screenshots/
-│
-└── scripts/
+The main remaining work consists of:
+
+- Final screenshots and evidence review
+- Architecture diagram
+- Network diagram
+- UML sequence diagram
+- Final documentation review
+- Lessons learned
+- Final school report
+- Presentation material
+
+Microsoft Entra ID and Microsoft Intune were investigated but could not be implemented because the available account lacked the required tenant ownership, administrative roles and licenses.
+
+---
+
+# Environment Overview
+
+## Azure Resource Group
+
+All Azure resources are organized in:
+
+```text
+rg-nordicit-lab
+```
+
+The resource group makes it easier to manage:
+
+- Resources
+- Permissions
+- Monitoring
+- Costs
+- Cleanup after the project
+
+---
+
+## Azure Region
+
+The environment is deployed in a Swedish Azure region.
+
+The region was selected to provide:
+
+- Low latency for users in Sweden
+- Clear geographic placement
+- A realistic regional design for a Stockholm-based company
+
+---
+
+## Virtual Network
+
+The Azure virtual network is:
+
+```text
+vn-nordicit-lab
+```
+
+Address space:
+
+```text
+10.0.0.0/16
+```
+
+The virtual network provides private communication between Azure resources.
+
+---
+
+## Subnet Design
+
+The network is divided into three subnets:
+
+| Subnet | Address range | Purpose |
+|---|---:|---|
+| Server-Subnet | `10.0.0.0/24` | Domain controller and server resources |
+| Client-Subnet | `10.0.1.0/24` | Domain-joined Windows clients |
+| Management-Subnet | `10.0.2.0/24` | Administrative and management resources |
+
+The purpose of segmentation is to separate servers, clients and management traffic.
+
+This improves:
+
+- Security
+- Network control
+- Troubleshooting
+- Future scalability
+- Least-privilege network access
+
+---
+
+## Network Security Groups
+
+The following Network Security Groups were created:
+
+```text
+nsg-server-subnet
+nsg-client-subnet
+nsg-management-subnet
+```
+
+The NSGs are used to control inbound and outbound traffic between subnets and external networks.
+
+Security decisions include:
+
+- Restricted RDP access
+- Private communication between CLIENT01 and DC01
+- Removal of direct public RDP access to DC01
+- Separate rules for client, server and management networks
+
+---
+
+## Virtual Machines
+
+### Domain Controller
+
+| Property | Value |
+|---|---|
+| Azure resource name | `vm-dc01` |
+| Windows computer name | `DC01` |
+| Private IP address | `10.0.0.4` |
+| Public IP address | None |
+| Subnet | Server-Subnet |
+| Main roles | AD DS, DNS and lab file services |
+
+DC01 has no public IP address.
+
+This reduces exposure to internet-based attacks and prevents direct public RDP access.
+
+### Windows Client
+
+| Property | Value |
+|---|---|
+| Azure resource name | `vm-client01` |
+| Windows computer name | `CLIENT01` |
+| Private IP address | `10.0.1.4` |
+| Subnet | Client-Subnet |
+| Main roles | Domain-joined client and temporary jump host |
+
+CLIENT01 is used to test:
+
+- Domain join
+- DNS
+- Domain authentication
+- Group Policy
+- File access
+- Internal Remote Desktop
+
+---
+
+## Administrative Access Path
+
+Administrative access follows this design:
+
+```text
+Administrator laptop
+        |
+        | RDP over the internet
+        v
+CLIENT01
+        |
+        | Internal RDP over the Azure VNet
+        v
+DC01
+```
+
+The internal RDP connection from CLIENT01 to DC01 uses:
+
+```text
+10.0.0.4
+```
+
+This design is more secure than exposing the domain controller directly to the internet.
+
+---
+
+# Active Directory Domain Services
+
+## Domain
+
+The Active Directory domain is:
+
+```text
+corp.nordicit.local
+```
+
+NetBIOS name:
+
+```text
+NORDICIT
+```
+
+DC01 provides:
+
+- Active Directory Domain Services
+- DNS
+- Global Catalog
+- Group Policy management
+- Centralized authentication
+
+---
+
+## DNS
+
+CLIENT01 uses the domain controller as its DNS server:
+
+```text
+10.0.0.4
+```
+
+This is required so that the client can locate:
+
+- The Active Directory domain
+- Domain controllers
+- LDAP services
+- Kerberos services
+- Internal DNS records
+
+DNS was tested before and after the domain join.
+
+---
+
+## Organizational Unit Structure
+
+The main Organizational Unit is:
+
+```text
+OU=Nordic IT Solutions
+```
+
+The following OUs were created:
+
+```text
+IT
+HR
+Finance
+Sales
+Management
+Consultants
+Users
+Computers
+Servers
+```
+
+The OU structure is used to:
+
+- Organize users and computers
+- Separate departments
+- Support Group Policy targeting
+- Improve administration
+- Prepare the environment for future expansion
+
+---
+
+## Test Users
+
+The following test users were created:
+
+| User | Username | Department | Job title |
+|---|---|---|---|
+| Anna Andersson | `anna.andersson` | IT | IT Administrator |
+| Erik Eriksson | `erik.eriksson` | HR | HR Administrator |
+| Sara Svensson | `sara.svensson` | Finance | Finance Administrator |
+| Johan Johansson | `johan.johansson` | Sales | Sales Representative |
+| Maria Nilsson | `maria.nilsson` | Management | Manager |
+| David Karlsson | `david.karlsson` | Consultants | Consultant |
+
+The users are:
+
+- Enabled
+- Located in the correct department OU
+- Assigned the correct department attribute
+- Assigned the correct job title
+- Added to the correct department group
+
+---
+
+## Security Groups
+
+Global department groups:
+
+```text
+GG-IT
+GG-HR
+GG-Finance
+GG-Sales
+GG-Management
+GG-Consultants
+```
+
+Domain-local permission groups:
+
+```text
+DL-IT-Modify
+DL-HR-Modify
+DL-Finance-Modify
+DL-Sales-Modify
+DL-Management-Modify
+DL-Consultants-Modify
+```
+
+Remote Desktop group:
+
+```text
+GG-Remote-Desktop-Users
 ```
 
 ---
 
-## Documentation Plan
+## AGDLP Permission Model
 
-The documentation will describe both what was configured and why it was configured.
+The project uses the AGDLP model:
 
-Each major part of the project will include:
+```text
+Accounts
+    ↓
+Global Groups
+    ↓
+Domain Local Groups
+    ↓
+Permissions
+```
 
-* Purpose
-* Configuration steps
-* Screenshots
-* Explanation of important settings
-* Testing
-* Results
-* Problems and solutions
-* Security considerations
+Example:
 
-This approach helps demonstrate practical knowledge and provides clear documentation of the implementation, testing, and configuration decisions made throughout the project.
+```text
+Erik Eriksson
+    ↓
+GG-HR
+    ↓
+DL-HR-Modify
+    ↓
+HR$ file share
+```
 
----
+This design avoids assigning permissions directly to individual users.
 
-## Expected Result
+Benefits include:
 
-At the end of the project, the lab should include a working and documented Azure enterprise environment with:
-
-* Azure infrastructure
-* Virtual network design
-* Windows Server virtual machine
-* Active Directory domain
-* Users, groups, and Organizational Units
-* Group Policies
-* Basic Active Directory security hardening
-* Microsoft Entra ID documentation
-* Microsoft Intune configuration or design
-* PowerShell automation scripts
-* Monitoring configuration
-* Backup and recovery testing
-* Screenshots and final documentation
-
-The final project should demonstrate that the environment has been planned, implemented, secured, tested, and evaluated.
+- Easier administration
+- Better scalability
+- Clearer auditing
+- Simplified troubleshooting
+- Reduced risk of inconsistent permissions
 
 ---
 
-## Limitations
+# Windows Client and Domain Join
 
-This project is a lab environment and not a full production environment.
+CLIENT01 was configured to use DC01 as its DNS server and was joined to:
 
-Some features may be simplified due to licensing, cost, time, or access limitations.
+```text
+corp.nordicit.local
+```
 
-The focus is on demonstrating understanding and practical ability, not building a complete enterprise system for real production use.
+The client was used to verify:
+
+- Domain discovery
+- DNS resolution
+- Domain join
+- Domain user login
+- Group Policy application
+- File share access
+- Internal RDP connectivity
 
 ---
 
-## Future Improvements
+# Group Policy
+
+A Group Policy Object named:
+
+```text
+Client Security Baseline
+```
+
+was created and linked to the computer OU.
+
+Configured settings include:
+
+- Windows Defender Firewall enabled
+- Machine inactivity timeout set to 900 seconds
+- Centralized computer security settings
+
+The policy was validated using tools such as:
+
+```powershell
+gpupdate /force
+gpresult
+```
+
+The results confirmed that the policy was applied to CLIENT01.
+
+---
+
+# File Services
+
+## Department Folders
+
+The main file share location is:
+
+```text
+C:\CompanyShares
+```
+
+Department folders:
+
+```text
+C:\CompanyShares\IT
+C:\CompanyShares\HR
+C:\CompanyShares\Finance
+C:\CompanyShares\Sales
+C:\CompanyShares\Management
+C:\CompanyShares\Consultants
+```
+
+---
+
+## Hidden SMB Shares
+
+The folders are shared using hidden share names:
+
+```text
+IT$
+HR$
+Finance$
+Sales$
+Management$
+Consultants$
+```
+
+Example path:
+
+```text
+\\DC01\HR$
+```
+
+The dollar sign hides the share from normal network browsing, although it does not replace proper permissions.
+
+---
+
+## NTFS Permissions
+
+Each department folder uses the following permission model:
+
+```text
+NT AUTHORITY\SYSTEM           Full Control
+BUILTIN\Administrators        Full Control
+NORDICIT\DL-Department-Modify Modify
+```
+
+Example:
+
+```text
+NORDICIT\DL-HR-Modify
+```
+
+has NTFS Modify access to:
+
+```text
+C:\CompanyShares\HR
+```
+
+---
+
+## SMB Permissions
+
+Each department permission group has SMB Change access to its department share.
+
+Example:
+
+```text
+NORDICIT\DL-HR-Modify
+```
+
+has Change access to:
+
+```text
+HR$
+```
+
+Effective access is determined by the combination of SMB and NTFS permissions.
+
+---
+
+## Access-Based Enumeration
+
+All department shares use:
+
+```text
+FolderEnumerationMode: AccessBased
+```
+
+Access-Based Enumeration helps hide files and folders that a user does not have permission to access.
+
+---
+
+## Offline Caching
+
+All department shares use:
+
+```text
+CachingMode: None
+```
+
+Offline caching was disabled to avoid uncontrolled offline copies of department data in the lab design.
+
+---
+
+## File Access Testing
+
+Access testing confirmed that:
+
+- An HR user could access the HR share
+- The HR user could create and modify files
+- A Finance user was denied access to the HR share
+- The AGDLP permission model worked as intended
+- NTFS and SMB permissions were correctly combined
+
+---
+
+# Azure Backup
+
+A Recovery Services Vault was created:
+
+```text
+rsv-nordicit-lab
+```
+
+Backup configuration includes:
+
+- Locally Redundant Storage
+- Soft Delete enabled
+- Protection for `vm-dc01`
+- Successful initial backup
+- Application-consistent recovery point
+
+The backup validation confirmed that DC01 was protected and that a recovery point was available.
+
+A full restore test has not yet been completed and is documented as a future improvement.
+
+---
+
+# Azure Monitor and Log Analytics
+
+A Log Analytics Workspace was created:
+
+```text
+law-nordicit-lab
+```
+
+Configuration includes:
+
+```text
+Retention: 30 days
+Pricing tier: PerGB2018
+```
+
+Azure Monitor Agent was installed on DC01.
+
+A Data Collection Rule was created:
+
+```text
+dcr-dc01-monitoring
+```
+
+Collected data includes:
+
+- Heartbeat
+- Windows Event Logs
+- Performance counters
+
+The following data types were verified in Log Analytics:
+
+```text
+Heartbeat
+Event
+Perf
+```
+
+---
+
+## Alerting
+
+A CPU alert was created:
+
+```text
+alert-dc01-high-cpu
+```
+
+The alert demonstrates how Azure Monitor can be used to detect performance problems.
+
+In a production environment, alerts would normally be connected to an Action Group for:
+
+- Email
+- SMS
+- Webhooks
+- IT service management systems
+
+---
+
+# Security Hardening
+
+Security was included throughout the project.
+
+Implemented controls include:
+
+- Removal of the public IP address from DC01
+- Restricted RDP access
+- Private communication between CLIENT01 and DC01
+- Network segmentation
+- Network Security Groups
+- Windows Firewall through Group Policy
+- Department-based access control
+- AGDLP permissions
+- Hidden SMB shares
+- Access-Based Enumeration
+- Disabled offline caching
+- Azure Backup
+- Azure Monitor
+- Centralized identity management
+
+The project uses multiple security layers instead of relying on a single control.
+
+---
+
+# PowerShell Automation
+
+Three idempotent PowerShell scripts were created.
+
+Idempotent means that the scripts can be run repeatedly without creating duplicate objects or performing unnecessary changes.
+
+---
+
+## Active Directory Structure Script
+
+File:
+
+```text
+scripts/powershell/New-NordicITActiveDirectoryStructure.ps1
+```
+
+The script manages:
+
+- Main Organizational Unit
+- Department OUs
+- Users, Computers and Servers OUs
+- Global security groups
+- Domain-local permission groups
+- AGDLP group nesting
+
+Test result:
+
+```text
+TC-PS-001 – PASS
+```
+
+---
+
+## Department File Share Script
+
+File:
+
+```text
+scripts/powershell/New-NordicITDepartmentShares.ps1
+```
+
+The script manages:
+
+- Department folders
+- Hidden SMB shares
+- NTFS permissions
+- SMB permissions
+- Access-Based Enumeration validation
+- Offline caching configuration
+- File server validation
+
+Test result:
+
+```text
+TC-PS-002 – PASS
+```
+
+---
+
+## Active Directory User Script
+
+File:
+
+```text
+scripts/powershell/New-NordicITUsers.ps1
+```
+
+The script manages:
+
+- User creation
+- Account status
+- OU placement
+- Department attributes
+- Job titles
+- Department group memberships
+
+Test result:
+
+```text
+TC-PS-003 – PASS
+```
+
+---
+
+# Microsoft Entra ID and Intune Limitation
+
+Microsoft Entra ID integration and Microsoft Intune were included in the original project scope.
+
+During implementation, the tenant and account were investigated.
+
+The investigation showed that:
+
+- The Azure account was represented as an external B2B user
+- The account user principal name contained `#EXT#`
+- The account had no assigned Intune licenses
+- The account lacked suitable Entra and Intune administrative roles
+- The Intune Tenant Status page returned `401 – No Permission`
+- Creating another Workforce tenant required additional paid licensing and tenant permissions
+
+Azure subscription permissions, Microsoft Entra tenant roles and Microsoft Intune licensing are separate requirements.
+
+The account could manage Azure infrastructure but could not administer the Microsoft Entra and Intune tenant.
+
+Because of this, Intune was documented as a planned production extension but was not deployed.
+
+Detailed documentation:
+
+```text
+docs/12-intune-licensing-limitation.md
+```
+
+---
+
+## Planned Production Design for Entra ID and Intune
+
+In a production environment, Nordic IT Solutions would use:
+
+1. A company-controlled Microsoft Entra tenant
+2. Internal administrator accounts
+3. Least-privilege Entra and Intune roles
+4. Valid Intune licenses
+5. Microsoft Entra Connect Sync or Cloud Sync
+6. User synchronization from Active Directory
+7. Automatic Windows MDM enrollment
+8. Intune compliance policies
+9. Windows configuration profiles
+10. Security baselines
+11. Windows Update policies
+12. Conditional Access where licensing permits
+
+The existing users in:
+
+```text
+corp.nordicit.local
+```
+
+would be synchronized to the company-controlled tenant.
+
+---
+
+# Testing
+
+Testing performed in the lab includes:
+
+- Azure network connectivity
+- DNS resolution
+- Domain discovery
+- Domain join
+- Domain user authentication
+- Internal RDP connectivity
+- Group Policy application
+- Authorized file share access
+- Unauthorized file share denial
+- NTFS permission validation
+- SMB permission validation
+- Access-Based Enumeration validation
+- Backup completion
+- Recovery point validation
+- Azure Monitor Heartbeat
+- Windows Event collection
+- Performance data collection
+- Active Directory automation testing
+- File share automation testing
+- User automation testing
+- Repeated idempotency testing
+
+Test results are documented in:
+
+```text
+docs/04-test-results.md
+```
+
+---
+
+# Troubleshooting
+
+The project included troubleshooting of:
+
+- Azure subnet address conflicts
+- DNS and domain join issues
+- RDP access
+- Network Security Group rules
+- Public and private IP access
+- Nested Remote Desktop sessions
+- SMB and NTFS permissions
+- Group membership validation
+- PowerShell script idempotency
+- Azure monitoring data collection
+- Tenant and Intune permission errors
+
+Troubleshooting steps and results are documented in:
+
+```text
+docs/05-troubleshooting.md
+```
+
+---
+
+# Repository Structure
+
+```text
+azure-enterprise-lab/
+├── README.md
+├── docs/
+│   ├── 00-current-project-status.md
+│   ├── 01-project-plan.md
+│   ├── 03-domain-environment.md
+│   ├── 04-test-results.md
+│   ├── 05-troubleshooting.md
+│   ├── 06-azure-backup.md
+│   ├── 07-azure-monitor.md
+│   ├── 08-security-hardening.md
+│   └── 12-intune-licensing-limitation.md
+├── diagrams/
+├── evidence/
+└── scripts/
+    └── powershell/
+        ├── New-NordicITActiveDirectoryStructure.ps1
+        ├── New-NordicITDepartmentShares.ps1
+        └── New-NordicITUsers.ps1
+```
+
+The structure may be adjusted during the final documentation phase.
+
+---
+
+# Project Roadmap
+
+## Phase 1 – Planning
+
+Completed:
+
+- Business scenario
+- Project goals
+- Initial architecture planning
+- GitHub repository
+- Documentation structure
+
+## Phase 2 – Azure Infrastructure
+
+Completed:
+
+- Resource group
+- Virtual network
+- Subnets
+- Network Security Groups
+- Windows Server VM
+- Windows client VM
+
+## Phase 3 – Active Directory
+
+Completed:
+
+- AD DS installation
+- Domain creation
+- DNS
+- OU structure
+- Users
+- Groups
+- AGDLP model
+- Domain join
+
+## Phase 4 – Security and Group Policy
+
+Completed:
+
+- Group Policy baseline
+- Windows Firewall policy
+- Machine inactivity timeout
+- Restricted RDP
+- Removal of public IP from DC01
+- File access control
+
+## Phase 5 – File Services
+
+Completed:
+
+- Department folders
+- SMB shares
+- NTFS permissions
+- SMB permissions
+- Access testing
+- Access-Based Enumeration
+- Caching configuration
+
+## Phase 6 – PowerShell Automation
+
+Completed:
+
+- AD structure automation
+- File share automation
+- User automation
+- Idempotency testing
+
+## Phase 7 – Monitoring and Backup
+
+Completed:
+
+- Recovery Services Vault
+- Backup policy
+- Initial backup
+- Recovery point validation
+- Log Analytics
+- Azure Monitor Agent
+- Data Collection Rule
+- Heartbeat, Event and Perf validation
+- CPU alert
+
+## Phase 8 – Entra ID and Intune
+
+Investigated but not implemented because of:
+
+- External B2B account
+- Missing tenant-level roles
+- Missing Intune licenses
+- Tenant creation restrictions
+
+## Phase 9 – Final Delivery
+
+In progress:
+
+- Final screenshots
+- Evidence review
+- Architecture diagram
+- Network diagram
+- UML sequence diagram
+- Lessons learned
+- Final report
+- Presentation
+
+---
+
+# Known Limitations
+
+This is a lab environment and not a complete production deployment.
+
+Known limitations include:
+
+- One domain controller
+- File services hosted on the domain controller
+- No redundant DNS server
+- No second domain controller
+- No production VPN implementation
+- No Entra Connect synchronization
+- No Intune enrollment
+- No Conditional Access
+- No complete disaster recovery environment
+- No full backup restore test
+- Limited number of users and devices
+- Temporary use of CLIENT01 as a jump host
+
+These limitations were accepted because of:
+
+- Project scope
+- Cost
+- Licensing
+- Available time
+- Tenant access restrictions
+
+---
+
+# Future Improvements
 
 Possible future improvements include:
 
-* Hybrid identity with Microsoft Entra Connect
-* Multi-factor authentication enforcement
-* Conditional Access policies
-* More advanced Intune security baselines
-* Defender for Endpoint integration
-* More advanced PowerShell automation
-* More detailed logging and alerting
-* Additional backup scenarios
-* Disaster recovery planning
-* Cost analysis for Azure resources
-* Infrastructure as Code using Terraform or Bicep
+- Deploying a second domain controller
+- Deploying a dedicated file server
+- Implementing Azure VPN Gateway
+- Implementing Microsoft Entra Connect or Cloud Sync
+- Enrolling clients in Microsoft Intune
+- Enforcing multi-factor authentication
+- Implementing Conditional Access
+- Integrating Microsoft Defender for Endpoint
+- Adding more monitoring alerts
+- Testing a complete VM restore
+- Creating a disaster recovery plan
+- Performing Azure cost analysis
+- Implementing Infrastructure as Code with Bicep or Terraform
+- Adding automated reporting scripts
 
 ---
 
-## Author
+# Documentation Approach
 
-Christoffer Öberg
+Each major project area is documented with:
+
+- Purpose
+- Design decisions
+- Configuration
+- Testing
+- Results
+- Problems and solutions
+- Security considerations
+- Future improvements
+
+This approach demonstrates both practical implementation and understanding of why each component was used.
+
+---
+
+# Expected Final Result
+
+The final project should contain:
+
+- A working Azure network
+- A Windows Server domain controller
+- A domain-joined Windows client
+- Active Directory users, groups and OUs
+- Department file shares
+- Group Policy
+- Security hardening
+- Azure Backup
+- Azure Monitor
+- PowerShell automation
+- Testing and troubleshooting documentation
+- Architecture and network diagrams
+- Final screenshots and evidence
+- Final project evaluation
+- Presentation material
+
+---
+
+# Author
+
+**Christoffer Öberg**
 
 Vocational Education – Network Technician
 
