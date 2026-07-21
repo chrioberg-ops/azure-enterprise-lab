@@ -174,3 +174,30 @@ Evidence:
 - The final `WhatIf` run did not report any required changes.
 
 **Result:** PASS
+
+---
+
+## TC-PS-003 – Active Directory User Automation
+
+**Purpose:** Verify that the user automation script can validate and maintain Active Directory users, organizational unit placement, user attributes and department group memberships.
+
+**Expected result:**
+
+- All required user accounts are detected.
+- All accounts are enabled.
+- Users are located in the correct department OUs.
+- Department and job title attributes are correct.
+- Each user is a member of the correct global department group.
+- A repeated run does not attempt unnecessary changes.
+
+**Actual result:**
+
+- All six user accounts were detected.
+- All accounts were enabled.
+- All users were located in their correct department OUs.
+- Department and job title attributes were verified.
+- All department group memberships were detected.
+- The final validation run reported that all user properties were correct.
+- No unnecessary creation or modification operations were attempted.
+
+**Result:** PASS
