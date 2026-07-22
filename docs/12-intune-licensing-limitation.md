@@ -6,7 +6,7 @@ The original project plan included Microsoft Entra ID and Microsoft Intune as pa
 
 The intended design was to synchronize the Active Directory domain `corp.nordicit.local` with Microsoft Entra ID and manage Windows devices through Microsoft Intune.
 
-During implementation, the available tenant, account roles and licenses were investigated. The result showed that the current Azure account could manage Azure infrastructure resources but did not have the required Microsoft Entra or Intune permissions and licenses.
+During implementation, the available tenant, account permissions and licenses were investigated. The result showed that the current Azure account could manage Azure infrastructure resources, but did not have the required Microsoft Intune permissions or licenses.
 
 Because of this, the practical Intune implementation could not be completed in the available tenant.
 
@@ -16,11 +16,11 @@ Because of this, the practical Intune implementation could not be completed in t
 
 The Azure subscription is connected to a Microsoft Entra tenant named `Standardkatalog`.
 
-The account used for the project is represented in the tenant as an external Microsoft Entra B2B account. This was confirmed by:
+The account used for the project signs in with the user's primary Microsoft account.
 
-- The user principal name containing `#EXT#`
-- The account being marked as external
-- No licenses being assigned to the account
+Inside the Microsoft Entra tenant, the account is represented by a user principal name containing `#EXT#` and uses `MicrosoftAccount` as its identity provider.
+
+The account has the user type `Member`, but authentication is performed through an identity outside the tenant.
 
 The account could manage Azure resources such as:
 
@@ -41,7 +41,7 @@ Access to an Azure subscription does not automatically provide permission to:
 - Enroll devices into Intune
 - Configure automatic MDM enrollment
 - Create internal tenant users
-- Create additional workforce tenants
+- Manage Microsoft 365 licensing
 
 ---
 
@@ -58,16 +58,23 @@ Details: No Permission
 
 This confirmed that the account did not have permission to administer Microsoft Intune in the connected tenant.
 
+---
+
 ## Licensing Limitation
 
-Microsoft Intune requires an appropriate license and an account with the necessary tenant roles.
+The user account had no assigned Microsoft 365 or Intune licenses.
 
-The available external B2B account had:
+The Microsoft Entra license page displayed:
 
-- No assigned Microsoft 365 or Intune license
-- No Intune administrative role
-- No authority to assign tenant licenses
-- No authority to create internal workforce users
+```text
+No license assignments found
+```
+
+Microsoft 365 Admin Center also rejected the personal Microsoft account and required a work or school account.
+
+Because of this, the current account could not manage or assign the licenses required for Microsoft Intune.
+
+---
 
 ## Project Decision
 
@@ -77,20 +84,28 @@ Instead, the limitation was documented as a real-world dependency involving:
 
 - Tenant ownership
 - Microsoft Entra roles
-- Microsoft Intune licensing
+- Microsoft Intune permissions
+- Microsoft 365 and Intune licensing
 - Device enrollment authority
+- Access to an organizational work or school account
+
+This provides a more accurate result than claiming that Intune was implemented when the required tenant access was unavailable.
+
+---
 
 ## Evidence
 
-### External B2B Account
+### External Microsoft Account
 
-The project account is represented as an external B2B user in the connected Microsoft Entra tenant.
+The account is represented in the Microsoft Entra tenant by a user principal name containing `#EXT#`.
 
-![External B2B Account](../evidence/09-intune-limitation/01-external-b2b-account.png)
+The identity provider is shown as `MicrosoftAccount`, and no licenses are assigned.
+
+![External Microsoft Account](../evidence/09-intune-limitation/01-external-microsoft-account.png)
 
 ### No Assigned Licenses
 
-No Microsoft 365 or Intune licenses were assigned to the account.
+The Microsoft Entra license page confirms that no licenses are assigned to the account.
 
 ![No Assigned Licenses](../evidence/09-intune-limitation/02-no-assigned-licenses.png)
 
@@ -100,20 +115,20 @@ The Microsoft Intune admin center returned a 401 permission error.
 
 ![Intune No Permission](../evidence/09-intune-limitation/03-intune-no-permission.png)
 
-### License Access Denied
+### License Administration Limitation
 
-The account could not access or assign the licenses required for Intune.
+Microsoft 365 Admin Center did not accept the personal Microsoft account used for the project.
 
-![License Access Denied](../evidence/09-intune-limitation/04-license-access-denied.png)
+The sign-in page required a work or school account, which prevented the current account from managing Microsoft 365 and Intune licenses.
 
-### Workforce Tenant Requirement
+![License Administration Limitation](../evidence/09-intune-limitation/04-license-access-denied.png)
 
-A proper implementation would require access to a workforce tenant with appropriate roles and licenses.
-
-![Workforce Tenant Requirement](../evidence/09-intune-limitation/05-workforce-tenant-license-requirement.png)
+---
 
 ## Result
 
 **NOT IMPLEMENTED — DOCUMENTED LIMITATION**
 
-The technical design remains valid, but practical implementation was blocked by tenant permissions and licensing rather than by an infrastructure configuration failure.
+The technical design remains valid, but practical implementation was blocked by tenant permissions, account type and licensing limitations.
+
+The limitation affected Microsoft Entra and Intune administration only. The implemented Azure infrastructure, Active Directory environment, networking, security, backup, monitoring and PowerShell automation remained functional.

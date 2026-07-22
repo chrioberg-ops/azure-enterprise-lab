@@ -98,3 +98,66 @@ A metric alert named `alert-dc01-high-cpu` was created for DC01.
 | Enabled | Yes |
 
 The alert provides early warning if the domain controller experiences sustained high CPU usage.
+
+---
+
+## Evidence
+
+### Log Analytics Workspace
+
+The Log Analytics workspace `law-nordicit-lab` is deployed in the resource group `rg-nordicit-lab` in Sweden Central.
+
+The workspace is active and uses a pay-as-you-go pricing model.
+
+![Log Analytics Workspace](../evidence/07-monitoring/01-log-analytics-workspace.png)
+
+### Data Collection Rule
+
+The Data Collection Rule `dcr-dc01-monitoring` defines which Windows events and performance counters are collected from DC01.
+
+The rule contains two data sources and is connected to one resource.
+
+![Data Collection Rule](../evidence/07-monitoring/02-data-collection-rule.png)
+
+### Azure Monitor Agent
+
+The Azure Monitor Windows Agent is installed on DC01.
+
+The extension completed provisioning successfully and the handler status is ready.
+
+![Azure Monitor Agent](../evidence/07-monitoring/03-azure-monitor-agent.png)
+
+### Heartbeat Results
+
+Heartbeat data from `DC01.corp.nordicit.local` was successfully received in Log Analytics.
+
+The results confirm that the Azure Monitor Agent was connected and reporting.
+
+![Heartbeat Results](../evidence/07-monitoring/04-heartbeat-results.png)
+
+### Windows Event Results
+
+Critical, error and warning events from DC01 were successfully collected from the System and Application logs.
+
+![Windows Event Results](../evidence/07-monitoring/05-event-results.png)
+
+### Performance Results
+
+Performance data was successfully collected from DC01.
+
+The results included processor, memory and logical disk counters.
+
+![Performance Results](../evidence/07-monitoring/06-performance-results.png)
+
+### High CPU Alert
+
+The metric alert `alert-dc01-high-cpu` monitors CPU usage on `vm-dc01`.
+
+The alert uses the following configuration:
+
+- Metric: Percentage CPU
+- Condition: Greater than 80 percent
+- Severity: 2
+- Scope: `vm-dc01`
+
+![High CPU Alert](../evidence/07-monitoring/07-high-cpu-alert.png)

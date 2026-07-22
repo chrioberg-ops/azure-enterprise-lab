@@ -27,7 +27,7 @@ The script is idempotent. Existing objects are detected before any creation or m
 
 File:
 
-`scripts/powershell/New-NordicITDepartmentFileShares.ps1`
+`scripts/powershell/New-NordicITDepartmentShares.ps1`
 
 The script validates and maintains:
 
